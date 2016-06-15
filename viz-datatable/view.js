@@ -10,7 +10,7 @@ define([
 ], function(BaseView, filter, _) {
   "use strict";
 
-  var dTable;
+  var dTable, tElement;
 
   return BaseView.extend({
 
@@ -18,7 +18,9 @@ define([
     _init: function() {
       this.base();
 
-      $(this._element).append('<table id="content" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">');
+      tElement = $('<table class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">');
+      
+      $(this._element).append(tElement);
     },
 
     /** @override */
@@ -28,19 +30,18 @@ define([
 
       if(dTable) {
         dTable.destory();
-        $('#content').empty();
+        tElement.empty();
       }
 
-      dTable = $('#content').DataTable( {
-
+      dTable = tElement.DataTable( {
         data:             tData.data,
         columns:          tData.columns,
 
         fixedHeader:      this.model.getv("fixedHeader"),
-        "filter":         this.model.getv("filter"),
-        "paging":         this.model.getv("paging"),
-        "ordering":       this.model.getv("ordering"),
-        "info":           this.model.getv("info")
+        filter:           this.model.getv("filter"),
+        paging:           this.model.getv("paging"),
+        ordering:         this.model.getv("ordering"),
+        info:             this.model.getv("info")
       } );
     },
 
