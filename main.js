@@ -19,10 +19,13 @@ define(
         width: 800,
         height: 600,
 
-        data: new Table(mockData(1000, 5)),
+        data: new Table(mockData(500, 5)),
 
-        scrollY: 500,
-        fixedHeader: true
+        fixedHeader: true,
+        filter: false,
+        paging: false,
+        ordering: true,
+        info: false
       }
     );
 
@@ -43,8 +46,13 @@ define(
 
       dataset.rows = [];
       for ( var r=0 ; r<rowsNum ; r++ ) {
+
         var label = "Label " + randVal(10, rowsNum);
-        dataset.rows.push({c: [{v: label, f: label}, randVal(10, rowsNum) ]});
+        dataset.rows.push({c: [{v: label, f: label}]});
+
+        for (var i = 0; i < colsNum-1; i++) {
+          dataset.rows[r]["c"].push(randVal(10, rowsNum));
+        }
       }
 
       return dataset;

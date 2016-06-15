@@ -33,11 +33,14 @@ define([
 
       dTable = $('#content').DataTable( {
 
-        data:           tData.data,
-        columns:        tData.columns,
+        data:             tData.data,
+        columns:          tData.columns,
 
-        //scrollY:        this.model.getv("scrollY"),
-        fixedHeader:       this.model.getv("fixedHeader")
+        fixedHeader:      this.model.getv("fixedHeader"),
+        "filter":         this.model.getv("filter"),
+        "paging":         this.model.getv("paging"),
+        "ordering":       this.model.getv("ordering"),
+        "info":           this.model.getv("info")
       } );
     },
 

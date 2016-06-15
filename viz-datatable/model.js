@@ -12,10 +12,23 @@ define([
         view: "view",
         props: [
           {
-            name: "scrollY"
+            name: "fixedHeader",
+            type: "boolean"
           },
           {
-            name: "fixedHeader",
+            name: "filter",
+            type: "boolean"
+          },
+          {
+            name: "paging",
+            type: "boolean"
+          },
+          {
+            name: "ordering",
+            type: "boolean"
+          },
+          {
+            name: "info",
             type: "boolean"
           }
         ]
