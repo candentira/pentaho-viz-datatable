@@ -10,17 +10,14 @@ define([
 ], function(BaseView, filter, _) {
   "use strict";
 
-  var dTable, tElement;
-
   return BaseView.extend({
 
     /** @override */
     _init: function() {
       this.base();
 
-      tElement = $('<table class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">');
-      
-      $(this._element).append(tElement);
+      this.tElement = $('<table class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">');
+      $(this._element).append(this.tElement);
     },
 
     /** @override */
@@ -28,12 +25,12 @@ define([
 
       var tData = parse(this.model.getv("data"));
 
-      if(dTable) {
-        dTable.destory();
-        tElement.empty();
+      if(this.dTable) {
+        this.dTable.destory();
+        this.tElement.empty();
       }
 
-      dTable = tElement.DataTable( {
+      this.dTable = this.tElement.DataTable( {
         data:             tData.data,
         columns:          tData.columns,
 
@@ -69,10 +66,12 @@ define([
     });
 
     _.each(data.implem.rows, function(row, r){
+
         var rData = [];
         _.each(row.c, function(cData, c){
             rData.push(cData.v);
         });
+
         tData.data.push(rData);
     });
 
