@@ -16,6 +16,10 @@ define([
             type: "boolean"
           },
           {
+            name: "colReorder",
+            type: "boolean"
+          },
+          {
             name: "filter",
             type: "boolean"
           },

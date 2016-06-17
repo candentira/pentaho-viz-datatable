@@ -4,7 +4,8 @@ define([
   "underscore",
   "datatables.net",
   "datatables.net-bs",
-  "datatables.net-fixedheader"
+  "datatables.net-fixedheader",
+  "datatables.net-colreorder"
   //"css!node_modules/datatables.net-bs/css/dataTables.bootstrap",
   //"css!node_modules/datatables.net-scroller-bs/css/scroller.bootstrap"
 ], function(BaseView, filter, _) {
@@ -35,6 +36,7 @@ define([
         columns:          tData.columns,
 
         fixedHeader:      this.model.getv("fixedHeader"),
+        colReorder:       this.model.getv("colReorder"),
         filter:           this.model.getv("filter"),
         paging:           this.model.getv("paging"),
         ordering:         this.model.getv("ordering"),

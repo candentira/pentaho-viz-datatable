@@ -22,6 +22,7 @@ define(
         data: new Table(mockData(500, 5)),
 
         fixedHeader: true,
+        colReorder: true,
         filter: false,
         paging: false,
         ordering: true,
