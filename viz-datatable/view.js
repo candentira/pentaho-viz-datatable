@@ -5,7 +5,8 @@ define([
   "datatables.net",
   "datatables.net-bs",
   "datatables.net-fixedheader",
-  "datatables.net-colreorder"
+  "datatables.net-colreorder",
+  "datatables.net-scroller"
   //"css!node_modules/datatables.net-bs/css/dataTables.bootstrap",
   //"css!node_modules/datatables.net-scroller-bs/css/scroller.bootstrap"
 ], function(BaseView, filter, _) {
@@ -39,6 +40,9 @@ define([
         colReorder:       this.model.getv("colReorder"),
         filter:           this.model.getv("filter"),
         paging:           this.model.getv("paging"),
+        scroller:         this.model.getv("scroller"),
+        deferRender:      this.model.getv("deferRender"),
+        scrollY:          this.model.getv("scrollY"),
         ordering:         this.model.getv("ordering"),
         info:             this.model.getv("info")
       } );

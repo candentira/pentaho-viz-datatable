@@ -21,10 +21,17 @@ define(
 
         data: new Table(mockData(500, 5)),
 
-        fixedHeader: true,
+        fixedHeader: false,
         colReorder: true,
         filter: false,
-        paging: false,
+        paging: true,
+
+        //settings for infinite scroll
+        //paging should be true if scroller is true
+        deferRender: false,
+        scrollY: 400,
+        scroller: true,
+
         ordering: true,
         info: false
       }

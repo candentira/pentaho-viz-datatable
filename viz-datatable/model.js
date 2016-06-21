@@ -28,6 +28,18 @@ define([
             type: "boolean"
           },
           {
+            name: "scroller",
+            type: "boolean"
+          },
+          {
+            name: "deferRender",
+            type: "boolean"
+          },
+          {
+            name: "scrollY",
+            type: "number"
+          },
+          {
             name: "ordering",
             type: "boolean"
           },
